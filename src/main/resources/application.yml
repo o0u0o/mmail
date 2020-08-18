@@ -1,0 +1,21 @@
+server:
+  servlet:
+    session:
+      timeout: 120
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 腾讯云数据库的mall库
+    url: jdbc:mysql://localhost:3306/mmail?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: Mysql8.0
+
+#将pojo的驼峰属性转换下划线
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    # 控制台日志配置 打印SQL
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # *mapper.xml本地地址
+  mapper-locations: classpath:mappers/*.xml
